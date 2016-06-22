@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>FID</title>
+</head>
+<body>
+<script type="text/javascript" src="fid.js"></script>
+<script>
+
+  console.log(Fid.generate('EVN', 'TO', 'SH', 'E', 'SHDKHSSDs', 'USC1B'));
+  console.log(
+      Fid.verify(
+          Fid.generate('EVN', 'TO', 'SH', 'E', 'SHDKHSSDs', 'USC1B')
+      )
+  );
+
+  console.log(
+      Fid.describe(
+          Fid.generate('EVN', 'TO', 'SH', 'E', 'SHDKHSSDs', 'USC1B')
+      )
+  );
+
+</script>
+</body>
+</html>
