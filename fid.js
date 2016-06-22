@@ -3,6 +3,27 @@
   w.Fid = function () {};
   w.Fid.generate = function (vendorKey, appKey, type, indicator, secret, location)
   {
+    if (vendorKey.length != 3)
+    {
+      throw "Vendor Key must be 3 characters"
+    }
+    if (appKey.length != 2)
+    {
+      throw "App Key must be 2 characters"
+    }
+    if (type.length != 2)
+    {
+      throw "Type must be 2 characters"
+    }
+    if (indicator.length != 1)
+    {
+      throw "System Indicator must be 1 character"
+    }
+    if (location.length != 5)
+    {
+      throw "Location must be 5 characters"
+    }
+
     var timeKey = Date.now().toString(36);
     while (timeKey.length < 9)
     {
