@@ -7,7 +7,22 @@
   };
   w.Fid.verify = function (fid, secret)
   {
-    return false;
+    if (fid.length != 32)
+    {
+      return false;
+    }
+
+    if (!fid.match(/[A-Z0-9=]{8}-[A-Z0-9=]{9}-[A-Z0-9=]{5}-[A-Z0-9=]{7}/))
+    {
+      return false;
+    }
+
+    if (secret && secret.length > 0)
+    {
+      console.log("Fid Secret Verification not supported");
+    }
+
+    return true;
   };
   w.Fid.describe = function (fid)
   {
